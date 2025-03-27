@@ -48,7 +48,7 @@ function drawImage() {
 
 		// Dynamic font size based on canvas width
 		const fontSize = Math.max(20, newWidth / 10); // Ensures text is always readable
-		ctx.font = `${fontSize}px Impact`;
+		ctx.font = `30px Impact`;
 		ctx.fillStyle = '#f3f2f2';
 		ctx.strokeStyle = '#f3f2f2';
 		ctx.lineWidth = 2;

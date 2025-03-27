@@ -10,22 +10,34 @@
 </head>
 
 <body>
-	<div class="left-container">
-		<h1>Meme Generator</h1>
-		<div class="controls">
-			<input type="text" id="topText" placeholder="Enter Top Text">
-			<input type="text" id="bottomText" placeholder="Enter Bottom Text">
-			<input type="file" id="imageInput" accept="image/*">
+	<header>
+		<a href="https://all-projects-portfolio.web.app/" target="_blank" class="row">
+			<img class="logo-img" src="logo.svg" />
+			<div class="logo-txt">
+				<h1>FLAVIA</h1>
+				<span>Kosti</span>
+			</div>
+		</a>
+	</header>
+	<main>
+		<div class="left-container">
+			<h1>Meme Generator</h1>
+			<div class="controls">
+				<input type="text" id="topText" placeholder="Enter Top Text">
+				<input type="text" id="bottomText" placeholder="Enter Bottom Text">
+				<input type="file" id="imageInput" accept="image/*">
 
-			<div class="buttons">
-				<button id="generate" onclick="generateMeme()">Generate Meme</button>
-				<button id="download" onclick="downloadMeme()">Download Meme</button>
+				<div class="buttons">
+					<button id="generate" onclick="generateMeme()">Generate Meme</button>
+					<button id="download" onclick="downloadMeme()">Download Meme</button>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="right-container">
-		<canvas id="memeCanvas" width="580" height="450"></canvas>
-	</div>
+		<div class="right-container">
+			<canvas id="memeCanvas" width="580" height="450"></canvas>
+		</div>
+	</main>
+
 </body>
 
 </html>

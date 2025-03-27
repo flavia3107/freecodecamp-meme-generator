@@ -7,15 +7,18 @@ html {
 }
 
 body {
-	display: flex;
-	align-items: center;
 	font-family: Arial, sans-serif;
 	background-color: #c3cfe2;
 	color: white;
+	height: 95%;
+}
+
+main {
+	display: flex;
+	align-items: center;
 	justify-content: center;
 	gap: 3rem;
-	height: 98%;
-	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+	height: 95%;
 }
 
 .left-container {
@@ -25,10 +28,6 @@ body {
 	width: 30%;
 	padding: 3rem;
 	box-sizing: border-box;
-}
-
-.right-container {
-	width: 65%;
 }
 
 input:not([type="file"]) {
@@ -78,4 +77,75 @@ button {
 	flex-direction: column;
 	align-items: flex-end;
 	margin-top: 2rem;
+}
+
+::-webkit-scrollbar {
+	height: 9px;
+	width: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #8e9eb7;
+	width: 9px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+	width: 9px;
+}
+
+::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	padding: 1rem;
+}
+
+.logo > img {
+	height: 35px;
+}
+
+.logo-txt {
+	padding-left: 7px;
+	display: flex;
+	flex-direction: column;
+	color: #46546a;
+	align-items: flex-start;
+}
+
+.logo-img {
+	width: 2rem;
+	margin-right: 3px;
+}
+
+.logo-txt h1,
+.logo-txt span {
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+	letter-spacing: 4px;
+	color: #46546a;
+}
+
+.logo-txt h1 {
+	font-weight: bolder;
+	font-size: 1rem;
+}
+
+.logo-txt span {
+	font-weight: lighter;
+	font-size: 0.85rem;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	padding: 0.5rem;
+}
+
+a {
+	text-decoration: none;
 }
