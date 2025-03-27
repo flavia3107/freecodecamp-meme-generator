@@ -10,15 +10,19 @@
 </head>
 
 <body>
-	<h1>Meme Generator</h1>
-	<input type="file" id="imageInput" accept="image/*">
-	<div class="controls">
-		<input type="text" id="topText" placeholder="Enter Top Text">
-		<input type="text" id="bottomText" placeholder="Enter Bottom Text">
-		<button id="generate" onclick="generateMeme()">Generate Meme</button>
-		<button id="download" onclick="downloadMeme()">Download Meme</button>
+	<div class="left-container">
+		<h1>Meme Generator</h1>
+		<input type="file" id="imageInput" accept="image/*">
+		<div class="controls">
+			<input type="text" id="topText" placeholder="Enter Top Text">
+			<input type="text" id="bottomText" placeholder="Enter Bottom Text">
+			<button id="generate" onclick="generateMeme()">Generate Meme</button>
+			<button id="download" onclick="downloadMeme()">Download Meme</button>
+		</div>
 	</div>
-	<canvas id="memeCanvas" width="580" height="450"></canvas>
+	<div class="right-container">
+		<canvas id="memeCanvas" width="580" height="450"></canvas>
+	</div>
 </body>
 
 </html>

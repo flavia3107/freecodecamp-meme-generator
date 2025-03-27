@@ -23,6 +23,8 @@ imageInput.addEventListener('change', (event) => {
 // Draw image and text on canvas
 function drawImage() {
 	if (uploadedImage) {
+		canvas.width = uploadedImage.naturalWidth;
+		canvas.height = uploadedImage.naturalHeight;
 		// Clear canvas and set canvas dimensions to fit the image
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		ctx.drawImage(uploadedImage, 0, 0, canvas.width, canvas.height);
