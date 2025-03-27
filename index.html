@@ -12,12 +12,15 @@
 <body>
 	<div class="left-container">
 		<h1>Meme Generator</h1>
-		<input type="file" id="imageInput" accept="image/*">
 		<div class="controls">
 			<input type="text" id="topText" placeholder="Enter Top Text">
 			<input type="text" id="bottomText" placeholder="Enter Bottom Text">
-			<button id="generate" onclick="generateMeme()">Generate Meme</button>
-			<button id="download" onclick="downloadMeme()">Download Meme</button>
+			<input type="file" id="imageInput" accept="image/*">
+
+			<div class="buttons">
+				<button id="generate" onclick="generateMeme()">Generate Meme</button>
+				<button id="download" onclick="downloadMeme()">Download Meme</button>
+			</div>
 		</div>
 	</div>
 	<div class="right-container">
