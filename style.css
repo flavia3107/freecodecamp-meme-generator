@@ -1,5 +1,5 @@
 * {
-	color: #46546a;
+	color: #32353a;
 }
 
 html {
@@ -8,7 +8,7 @@ html {
 
 body {
 	font-family: Arial, sans-serif;
-	background-color: #c3cfe2;
+	background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 	color: white;
 	height: 95%;
 }
@@ -59,10 +59,10 @@ button {
 }
 
 #generate {
-	background-color: #46546a;
+	background-color: #32353a;
 }
 #download {
-	background-color: #8e9eb7;
+	background-color: #32353a;
 	width: 2rem;
 }
 
@@ -83,7 +83,7 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #8e9eb7;
+	background: #32353a;
 	width: 9px;
 }
 
@@ -110,7 +110,7 @@ button {
 	padding-left: 7px;
 	display: flex;
 	flex-direction: column;
-	color: #46546a;
+	color: #32353a;
 	align-items: flex-start;
 }
 
@@ -125,7 +125,7 @@ button {
 	padding: 0;
 	line-height: 1;
 	letter-spacing: 4px;
-	color: #46546a;
+	color: #32353a;
 }
 
 .logo-txt h1 {
@@ -159,7 +159,7 @@ a {
 	align-items: center;
 	justify-content: center;
 	font-size: 14px;
-	background-color: #46546a;
+	background-color: #32353a;
 }
 
 .upload-input {
