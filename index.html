@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Meme Generator</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 	<script src="script.js" defer></script>
 </head>
 
@@ -20,22 +21,24 @@
 		</a>
 	</header>
 	<main>
-		<div class="left-container">
-			<h1>Meme Generator</h1>
-			<div class="controls">
+		<h1>Meme Generator</h1>
+		<div class="controls">
+			<div class="row">
 				<input type="text" id="topText" placeholder="Enter Top Text">
 				<input type="text" id="bottomText" placeholder="Enter Bottom Text">
-				<input type="file" id="imageInput" accept="image/*">
-
-				<div class="buttons">
-					<button id="generate" onclick="generateMeme()">Generate Meme</button>
-					<button id="download" onclick="downloadMeme()">Download Meme</button>
+				<div class="buttons" id="buttons">
+					<button id="generate" onclick="generateMeme()">Generate</button>
+					<button id="download" onclick="downloadMeme()"><i class="fas fa-download"></i></button>
 				</div>
+				<label for="imageInput" class="upload-icon">
+					<i class="fas fa-upload"></i>
+				</label>
+				<input type="file" id="imageInput" class="upload-input" accept="image/*">
 			</div>
+
 		</div>
-		<div class="right-container">
-			<canvas id="memeCanvas" width="580" height="450"></canvas>
 		</div>
+		<canvas id="memeCanvas" width="580" height="450"></canvas>
 	</main>
 
 </body>

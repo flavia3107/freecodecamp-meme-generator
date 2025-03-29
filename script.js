@@ -1,6 +1,7 @@
 const canvas = document.getElementById('memeCanvas');
 const ctx = canvas.getContext('2d');
 const imageInput = document.getElementById('imageInput');
+const btnContainer = document.getElementById('buttons');
 let uploadedImage = null;
 
 canvas.style.display = 'none';
@@ -17,6 +18,7 @@ imageInput.addEventListener('change', (event) => {
 			uploadedImage = img;
 			canvas.style.display = 'block';
 			drawImage();
+			btnContainer.style.display = 'flex';
 		};
 	};
 
