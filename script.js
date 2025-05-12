@@ -3,14 +3,10 @@ const ctx = canvas.getContext('2d');
 const imageInput = document.getElementById('imageInput');
 const btnContainer = document.getElementById('buttons');
 let uploadedImage = null;
-
 canvas.style.display = 'none';
-
-// Load the image onto the canvas
 imageInput.addEventListener('change', (event) => {
 	const file = event.target.files[0];
 	const reader = new FileReader();
-
 	reader.onload = (e) => {
 		const img = new Image();
 		img.src = e.target.result;
@@ -21,35 +17,24 @@ imageInput.addEventListener('change', (event) => {
 			btnContainer.style.display = 'flex';
 		};
 	};
-
 	reader.readAsDataURL(file);
 });
 
-// Draw image and text on canvas
 function drawImage() {
+	const maxWidth = 1000;
+	const maxHeight = 600;
+	const scale = Math.min(maxWidth / uploadedImage.naturalWidth, maxHeight / uploadedImage.naturalHeight, 1);
+	const newWidth = canvas.width = uploadedImage.naturalWidth * scale;
+	const newHeight = canvas.height = uploadedImage.naturalHeight * scale;
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.drawImage(uploadedImage, 0, 0, newWidth, newHeight);
+}
+
+function generateMeme() {
 	if (uploadedImage) {
-		const maxWidth = 1000;
-		const maxHeight = 600;
-
-		let imgWidth = uploadedImage.naturalWidth;
-		let imgHeight = uploadedImage.naturalHeight;
-
-		let scale = Math.min(maxWidth / imgWidth, maxHeight / imgHeight, 1);
-		let newWidth = imgWidth * scale;
-		let newHeight = imgHeight * scale;
-
-		canvas.width = newWidth;
-		canvas.height = newHeight;
-
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		ctx.drawImage(uploadedImage, 0, 0, newWidth, newHeight);
-
-		// Get text values
 		const topText = document.getElementById('topText').value;
 		const bottomText = document.getElementById('bottomText').value;
-
-		// Dynamic font size based on canvas width
-		const fontSize = Math.max(20, newWidth / 10); // Ensures text is always readable
+		const fontSize = Math.max(20, canvas.width / 10); // Ensures text is always readable
 		ctx.font = `30px Impact`;
 		ctx.fillStyle = '#f3f2f2';
 		ctx.strokeStyle = '#f3f2f2';
@@ -57,21 +42,15 @@ function drawImage() {
 		ctx.textAlign = 'center';
 
 		// Draw top text
-		ctx.fillText(topText, newWidth / 2, fontSize);
-		ctx.strokeText(topText, newWidth / 2, fontSize);
+		ctx.fillText(topText, canvas.width / 2, fontSize);
+		ctx.strokeText(topText, canvas.width / 2, fontSize);
 
 		// Draw bottom text
-		ctx.fillText(bottomText, newWidth / 2, newHeight - fontSize / 2);
-		ctx.strokeText(bottomText, newWidth / 2, newHeight - fontSize / 2);
+		ctx.fillText(bottomText, canvas.width / 2, canvas.height - fontSize / 2);
+		ctx.strokeText(bottomText, canvas.width / 2, canvas.height - fontSize / 2);
 	}
 }
 
-// Generate meme by drawing text on the uploaded image
-function generateMeme() {
-	drawImage();
-}
-
-// Download the meme as an image
 function downloadMeme() {
 	const link = document.createElement('a');
 	link.download = 'meme.png';
